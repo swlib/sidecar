@@ -1,0 +1,41 @@
+{
+  "name": "swlib/sidecar",
+  "type": "library",
+  "keywords": [
+    "php",
+    "swoole",
+    "sidecar"
+  ],
+  "description": "sidecar",
+  "license": "Apache-2.0",
+  "authors": [
+    {
+      "name": "twosee",
+      "email": "twose@qq.com"
+    }
+  ],
+  "support": {
+    "issues": "https://github.com/swlib/sidecar/issues"
+  },
+  "require": {
+    "php": ">=7.0"
+  },
+  "autoload": {
+    "classmap": [
+      "src/SideCar.php"
+    ],
+    "psr-4": {
+      "Swlib\\SideCar\\": "src"
+    }
+  },
+  "repositories": {
+    "packagist": {
+      "type": "composer",
+      "url": "https://packagist.laravel-china.org/"
+    }
+  },
+  "config": {
+    "optimize-autoloader": true,
+    "sort-packages": true
+  }
+}
