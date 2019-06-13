@@ -5,7 +5,7 @@ namespace Swlib;
 
 use Swlib\Sidecar\Dispatcher;
 use Swlib\Sidecar\DispatcherInterface;
-use Swlib\Util\SingletonTrait;
+use Swlib\Util\Singleton;
 
 class Sidecar implements SidecarInterface
 {
@@ -26,7 +26,7 @@ class Sidecar implements SidecarInterface
     const PROTOCOL_GRPC      = 4;
     const PROTOCOL_FASTCGI   = 5;
 
-    use SingletonTrait;
+    use Singleton;
 
     public function __construct()
     {
