@@ -13,7 +13,7 @@ class PHPFpm
             $listen = trim($match[1]);
             list($ip, $port) = explode(':', $listen, 2);
             if (filter_var($ip, FILTER_VALIDATE_IP)) {
-                return [[AF_INET, SOCK_STREAM, IPPROTO_IP], [$ip, $port]];
+                return [[AF_INET, SOCK_STREAM, IPPROTO_IP], [$ip, (int)$port]];
             } else {
                 return [[AF_UNIX, SOCK_STREAM, IPPROTO_IP], [$listen]];
             }

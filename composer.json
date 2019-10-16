@@ -22,16 +22,10 @@
   },
   "autoload": {
     "classmap": [
-      "src/SideCar.php"
+      "src/Sidecar.php"
     ],
     "psr-4": {
-      "Swlib\\SideCar\\": "src"
-    }
-  },
-  "repositories": {
-    "packagist": {
-      "type": "composer",
-      "url": "https://packagist.laravel-china.org/"
+      "Swlib\\Sidecar\\": "src/Sidecar"
     }
   },
   "config": {

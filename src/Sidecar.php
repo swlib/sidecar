@@ -43,7 +43,7 @@ class Sidecar implements SidecarInterface
     }
 }
 
-$sidecar = Sidecar::getInstance();
-$fpmDispatcher = new FpmDispatcher();
-$sidecar->addDispatcher($fpmDispatcher);
-$sidecar->run();
+// $sidecar = Sidecar::getInstance();
+// $fpmDispatcher = new FpmDispatcher();
+// $sidecar->addDispatcher($fpmDispatcher);
+// $sidecar->run();
