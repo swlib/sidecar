@@ -16,8 +16,8 @@ require __DIR__ . '/../../../vendor/autoload.php';
 error_reporting(E_ALL);
 
 Coroutine::set([
-    'log_level'     => SWOOLE_LOG_INFO,
-    'trace_flags'   => 0,
+    'log_level' => SWOOLE_LOG_INFO,
+    'trace_flags' => 0,
     'max_coroutine' => 100000
 ]);
 
@@ -25,11 +25,16 @@ Coroutine::set([
     $phpFpmInfo = PHPFpm::getDefaultSocketInfoAndAddress();
     $config = require __DIR__ . '/config.php';
     $fastcgiParamsGenerator = require __DIR__ . '/fastcgi_params_generator.php';
-    $httpServer = new Server('127.0.0.1', 80, SWOOLE_BASE);
+    $httpServer = new Server(
+        $config['host'], $config['port'],
+        SWOOLE_BASE,
+        SWOOLE_SOCK_TCP | ($config['scheme'] === 'https' ? SWOOLE_SSL : 0)
+    );
     $httpServer->set([
+        'worker_num' => swoole_cpu_num() * 2,
         'http_parse_cookie' => false,
-        'http_parse_post'   => false
-    ]);
+        'http_parse_post' => false
+    ] + $config);
     $httpServer->on('request',
         function (Request $request, Response $response) use ($phpFpmInfo, $config, $fastcgiParamsGenerator) {
             $pathInfo = &$request->server['path_info'];
