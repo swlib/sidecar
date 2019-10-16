@@ -18,7 +18,10 @@
     "issues": "https://github.com/swlib/sidecar/issues"
   },
   "require": {
-    "php": ">=7.0"
+    "php": ">=7.0",
+    "swlib/fastcgi": "dev-master",
+    "swlib/http": "dev-master",
+    "swlib/util": "dev-master"
   },
   "autoload": {
     "classmap": [
