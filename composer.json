@@ -17,6 +17,7 @@
   "support": {
     "issues": "https://github.com/swlib/sidecar/issues"
   },
+  "minimum-stability": "dev",
   "require": {
     "php": ">=7.0",
     "swlib/fastcgi": "dev-master",
